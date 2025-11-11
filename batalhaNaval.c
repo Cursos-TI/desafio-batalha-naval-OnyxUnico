@@ -36,5 +36,39 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+int tabuleiro[10][10];
+
+    int navio1[3] = {3, 3 ,3};
+    int navio2[3] = {3, 3 ,3};
+
+    int navio1linha = 2;
+    int navio1coluna = 3;
+    
+    int navio2linha = 5;
+    int navio2coluna = 7;
+
+    int i, j;
+
+    for (i = 0; i < 10; i++){
+        for(j = 0;j < 10; j++){
+            tabuleiro[i][j] = 0;
+        }
+    }
+     
+    for (i = 0; i < 3; i ++){
+        tabuleiro[navio1linha][navio1coluna + i] = navio1[i];
+    }
+    for(int i = 0; i < 3; i++){
+        tabuleiro[navio2linha + i][navio2coluna] = navio2[i];
+    }
+    printf("Tabuleiro:\n\n");
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+
     return 0;
 }
